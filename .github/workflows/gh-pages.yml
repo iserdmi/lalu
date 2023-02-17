@@ -12,11 +12,16 @@ jobs:
         with:
           node-version: 18
           cache: npm
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.22.0
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile]
       - name: Build
         run: |
-          npm ci
-          npm run build
-          npm run export
+          pnpm build
+          pnpm export
           touch out/.nojekyll
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
