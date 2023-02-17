@@ -1,0 +1,21 @@
+@import '../../node_modules/reset-css/sass/reset';
+@import './mixins';
+@import './vars';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+html,
+body,
+#__next {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: $jost;
+}

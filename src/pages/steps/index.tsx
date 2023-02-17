@@ -3,18 +3,17 @@ import css from './index.module.scss'
 import { c } from '@/content'
 import { withLayouts } from '@/utils/withLayouts'
 
-const HomePage = () => {
+const StepsPage = () => {
   return (
     <>
       <Head>
-        <title>{c.main.promo.title}</title>
+        <title>{c.steps.title}</title>
       </Head>
       <div className={css.main}>
-        <h1>{c.main.promo.title}</h1>
-        <p>{c.main.promo.desc}</p>
+        <h1>{c.steps.title}</h1>
       </div>
     </>
   )
 }
 
-export default withLayouts(HomePage)
+export default withLayouts(StepsPage)
