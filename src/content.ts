@@ -9,7 +9,7 @@ export const c = {
   },
   main: {
     promo: {
-      title: 'Лариса Луканова1',
+      title: 'Лариса Луканова123',
       desc: 'Ландшафтное проектирование и дизайн, Санкт-Петербург',
     },
   },
@@ -29,6 +29,12 @@ export const c = {
       alias: 'dendro',
       title: 'Дендро-проект',
       address: 'Лисий Нос, Санкт-Петербург',
+    },
+    
+    {
+      alias: 'xxx',
+      title: 'XXX',
+      address: 'XXX',
     },
   ],
 }
