@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Link from 'next/link'
 import css from './index.module.scss'
-import { c } from '@/content'
+import { c } from '@/content/main'
 import { getHomeRoute, getStepsRoute, getWorkRoute } from '@/utils/routes'
 
 export const Layout = ({ children, className }: { children: React.ReactNode; className?: string }) => {

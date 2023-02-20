@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import css from './index.module.scss'
-import { c } from '@/content'
+import { c } from '@/content/main'
 import { withLayouts } from '@/utils/withLayouts'
 
 const StepsPage = () => {
