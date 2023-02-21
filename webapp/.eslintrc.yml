@@ -1,0 +1,6 @@
+extends:
+  - next/core-web-vitals
+  - ../.eslintrc.yml
+parserOptions:
+  project: ./tsconfig.json
+root: true

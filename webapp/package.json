@@ -1,0 +1,40 @@
+{
+  "name": "@lalu/webapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "types": "tsc --noEmit --project ./tsconfig.json",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
+    "stylelint": "stylelint --cache --cache-location ./node_modules/.cache/.stylelintcache 'src/**/*.scss'",
+    "stylecheck": "sass --update -q ./src:./node_modules/.cache/.stylecheckcache"
+  },
+  "dependencies": {
+    "@lalu/sanity": "workspace:*",
+    "@next/font": "13.1.6",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "classnames": "^2.3.2",
+    "eslint-config-next": "13.1.6",
+    "lodash": "^4.17.21",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sanity-codegen": "^0.9.8",
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@types/lodash": "^4.14.191",
+    "include-media": "^2.0.0",
+    "reset-css": "^5.0.1",
+    "sass": "^1.58.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0"
+  }
+}

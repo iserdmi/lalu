@@ -1,25 +1,22 @@
 extends:
-  - next/core-web-vitals
   - standard-with-typescript
   - prettier
 plugins:
   - node
-parserOptions:
-  project: ./tsconfig.json
 rules:
   no-new: off
-  '@typescript-eslint/strict-boolean-expressions': off
-  '@typescript-eslint/prefer-nullish-coalescing': off
-  '@typescript-eslint/explicit-function-return-type': off
-  '@typescript-eslint/restrict-template-expressions': off
-  '@typescript-eslint/triple-slash-reference': off
-  '@typescript-eslint/consistent-type-definitions':
+  "@typescript-eslint/strict-boolean-expressions": off
+  "@typescript-eslint/prefer-nullish-coalescing": off
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/restrict-template-expressions": off
+  "@typescript-eslint/triple-slash-reference": off
+  "@typescript-eslint/consistent-type-definitions":
     - error
     - type
-  '@typescript-eslint/ban-types':
+  "@typescript-eslint/ban-types":
     - error
     - types:
-        '{}': false
+        "{}": false
       extendDefaults: true
   import/order:
     - error

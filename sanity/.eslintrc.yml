@@ -1,0 +1,7 @@
+extends:
+  - '@sanity/eslint-config-studio'
+  # - ../.eslintrc.yml
+parserOptions:
+  project: ./tsconfig.json
+root: true
+# TODO: move eslint to nextjs app
