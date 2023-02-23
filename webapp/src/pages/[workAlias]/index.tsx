@@ -2,6 +2,7 @@ import { type GetStaticPropsContext } from 'next'
 import Head from 'next/head'
 import css from './index.module.scss'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
+import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
 import { sanityClient } from '@/utils/sanityClient'
 import { withLayouts } from '@/utils/withLayouts'
 
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
   }
 }
 
-export const getStaticProps = async (context: GetStaticPropsContext<{ workAlias: string }>) => {
+export const getStaticProps = withDefaultStaticProps(async (context: GetStaticPropsContext<{ workAlias: string }>) => {
   const [work] = await sanityClient.getAll('work', `alias.current == "${context.params?.workAlias}"`)
 
   return {
@@ -22,7 +23,7 @@ export const getStaticProps = async (context: GetStaticPropsContext<{ workAlias:
       work,
     },
   }
-}
+})
 
 const WorkPage = ({ work }: GetStaticPropsType<typeof getStaticProps>) => {
   return (

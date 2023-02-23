@@ -1,11 +1,11 @@
-import { type GetStaticPropsContext } from 'next'
 import Head from 'next/head'
 import css from './index.module.scss'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
+import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
 import { sanityClient } from '@/utils/sanityClient'
 import { withLayouts } from '@/utils/withLayouts'
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps = withDefaultStaticProps(async (ctx) => {
   const [main] = await sanityClient.getAll('main')
   const works = await sanityClient.getAll('work')
   const fullMain = {
@@ -18,20 +18,20 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   return {
     props: {
-      main: fullMain,
+      cMain: fullMain,
     },
   }
-}
+})
 
-const HomePage = ({ main }: GetStaticPropsType<typeof getStaticProps>) => {
+const HomePage = ({ cMain }: GetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
-        <title>{main.promo?.title}</title>
+        <title>{cMain.promo?.title}</title>
       </Head>
       <div className={css.main}>
-        <h1>{main.promo?.title}</h1>
-        <p>{main.promo?.desc}</p>
+        <h1>{cMain.promo?.title}</h1>
+        <p>{cMain.promo?.desc}</p>
       </div>
     </>
   )

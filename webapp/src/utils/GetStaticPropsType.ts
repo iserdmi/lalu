@@ -1,1 +1,1 @@
-export type GetStaticPropsType<T extends (...args: any) => Promise<{ props: any }>> = Awaited<ReturnType<T>>['props']
+export type GetStaticPropsType<T extends (...args: any) => any> = Awaited<ReturnType<T>>['props']

@@ -1,11 +1,11 @@
-import { type GetStaticPropsContext } from 'next'
 import Head from 'next/head'
 import css from './index.module.scss'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
+import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
 import { sanityClient } from '@/utils/sanityClient'
 import { withLayouts } from '@/utils/withLayouts'
 
-export const getStaticProps = async (context: GetStaticPropsContext<{ workAlias: string }>) => {
+export const getStaticProps = withDefaultStaticProps(async (context) => {
   const [steps] = await sanityClient.getAll('steps')
 
   return {
@@ -13,7 +13,7 @@ export const getStaticProps = async (context: GetStaticPropsContext<{ workAlias:
       steps,
     },
   }
-}
+})
 
 const StepsPage = ({ steps }: GetStaticPropsType<typeof getStaticProps>) => {
   return (
