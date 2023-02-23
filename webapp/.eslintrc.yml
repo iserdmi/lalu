@@ -4,3 +4,5 @@ extends:
 parserOptions:
   project: ./tsconfig.json
 root: true
+ignorePatterns:
+  - out/**

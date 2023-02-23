@@ -1,7 +1,7 @@
 import merge from 'lodash/merge'
-import { type GetStaticPropsContext, type GetStaticProps, type GetStaticPropsResult } from 'next'
+import { type GetStaticPropsContext } from 'next'
+import { type GetStaticPropsType } from './GetStaticPropsType'
 import { sanityClient } from './sanityClient'
-import { GetStaticPropsType } from './GetStaticPropsType'
 
 export const getDefaultStaticProps = async (ctx: GetStaticPropsContext) => {
   const [general] = await sanityClient.getAll('general')
