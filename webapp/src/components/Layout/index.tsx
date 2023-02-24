@@ -1,5 +1,4 @@
 import cn from 'classnames'
-// import Link from 'next/link'
 import Link from 'next/link'
 import css from './index.module.scss'
 import Mail from '@/assets/images/contacts/m.svg'
@@ -11,10 +10,6 @@ import Leaf from '@/assets/images/leaf.svg'
 import Logo from '@/assets/images/logo.svg'
 import { type DefaultStaticPropsType } from '@/utils/defaultGetStaticProps'
 import { getHomeRoute } from '@/utils/routes'
-// import { c } from '@/content/main'
-// import { getHomeRoute, getStepsRoute, getWorkRoute } from '@/utils/routes'
-
-// TODO: default static props
 
 export const Layout = ({
   children,
@@ -96,7 +91,7 @@ export const Layout = ({
             </li>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`${cGeneral.contacts?.telegram}`}>
-                <VK className={css.icon} />
+                <TG className={css.icon} />
                 Телеграм-канал
               </Link>
             </li>

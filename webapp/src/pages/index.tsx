@@ -1,7 +1,9 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import css from './index.module.scss'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
 import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
+import { getImageUrl } from '@/utils/image'
 import { sanityClient } from '@/utils/sanityClient'
 import { withLayouts } from '@/utils/withLayouts'
 
@@ -29,6 +31,11 @@ const HomePage = ({ cMain }: GetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>{cMain.promo?.title}</title>
       </Head>
+      <div className={css.gallery}>
+        {cMain.gallery?.map((item) => (
+          <img key={item._key} alt="" src={getImageUrl(item, { w: 1680, h: 611, fit: 'min' })} />
+        ))}
+      </div>
       <div className={css.main}>
         <h1>{cMain.promo?.title}</h1>
         <p>{cMain.promo?.desc}</p>

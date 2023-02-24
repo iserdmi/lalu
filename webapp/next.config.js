@@ -3,9 +3,10 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  // images: {
-  //   domains: [process.env.BACKEND_DOMAIN],
-  // },
+  images: {
+    domains: ['cdn.sanity.io'],
+    unoptimized: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

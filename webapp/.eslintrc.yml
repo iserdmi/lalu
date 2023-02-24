@@ -6,3 +6,5 @@ parserOptions:
 root: true
 ignorePatterns:
   - out/**
+rules:
+  '@next/next/no-img-element': off
