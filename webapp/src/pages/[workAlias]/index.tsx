@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import css from './index.module.scss'
 import BackArrow from '@/assets/images/back.svg'
+import { RichText } from '@/components/RichText'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
 import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
 import { getImageUrl } from '@/utils/image'
@@ -10,7 +11,6 @@ import { mdToHtml } from '@/utils/mdToHtml'
 import { getHomeRoute } from '@/utils/routes'
 import { sanityClient } from '@/utils/sanityClient'
 import { withLayouts } from '@/utils/withLayouts'
-import { RichText } from '@/components/RichText'
 
 export async function getStaticPaths() {
   const works = await sanityClient.getAll('work')
