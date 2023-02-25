@@ -11,6 +11,9 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#567f6b" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <Main />

@@ -3,12 +3,20 @@ extends:
   - stylelint-config-prettier-scss
 rules:
   selector-class-pattern:
-    - '^[a-z][a-zA-Z0-9]+$'
-    - message: 'Expected "%s" to be camelCase'
+    - ^[a-z][a-zA-Z0-9]+$
+    - message: Expected "%s" to be camelCase
   scss/dollar-variable-pattern:
-    - '^[a-z-]+$'
-    - message: 'Expected $ variable name to be kebab-case'
+    - ^[a-z][a-zA-Z0-9]+$
+    - message: Expected $ variable name to be camelCase
+  scss/at-mixin-pattern:
+    - ^[a-z][a-zA-Z0-9]+$
+    - message: Expected mixin to be camelCase
   selector-pseudo-element-colon-notation: 'single'
   scss/dollar-variable-empty-line-before: null
   block-no-empty: null
   declaration-empty-line-before: null
+  color-function-notation: null
+  alpha-value-notation: null
+  no-descending-specificity: null
+  scss/double-slash-comment-empty-line-before: null
+  declaration-block-no-redundant-longhand-properties: null

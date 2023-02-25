@@ -1,1 +1,59 @@
-// not empty
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.header {
+  @include sectionHPadding;
+  margin-top: 32px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  .headerInner {
+    max-width: $panelMaxWidth;
+    width: 100%;
+
+    .title {
+      @include t1;
+      margin-bottom: 8px;
+    }
+
+    .desc {
+      @include txl;
+      color: $brandBlack75;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.previewWrapper {
+  @include sectionHPadding;
+
+  .preview {
+    display: block;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+.contentWrapper {
+  margin-top: 61px;
+  padding-left: $hPaddingDesktop;
+  padding-right: $hPaddingDesktop;
+
+  .contentPanel {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-left: $hPaddingDesktop;
+    padding-right: $hPaddingDesktop;
+    padding-top: 90px;
+    padding-bottom: 73px;
+    background-color: $pureWhite;
+
+    .content {
+      width: 100%;
+      max-width: $panelMaxWidth;
+    }
+  }
+}

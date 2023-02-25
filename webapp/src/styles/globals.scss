@@ -8,6 +8,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 /* stylelint-disable-next-line selector-id-pattern */
@@ -18,4 +19,6 @@ body,
   min-height: 100vh;
   overflow-x: hidden;
   font-family: $jost;
+  color: $brandBlack;
+  background-color: $biege;
 }

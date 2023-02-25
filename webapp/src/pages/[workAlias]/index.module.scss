@@ -1,1 +1,107 @@
-// not empty
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.header {
+  margin-top: 32px;
+  @include sectionHPadding;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  .wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    max-width: $panelMaxWidth;
+    width: 100%;
+
+    .back {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      color: $brandBlack;
+      @include hoverTransition(color);
+      @include tmenu;
+
+      &:hover {
+        color: $brandGreen;
+        transition: none;
+      }
+
+      .icon {
+        margin-right: 16px;
+      }
+    }
+
+    .sectionTitle {
+      @include t3;
+      margin-top: 32px;
+      color: $brandBlack60;
+    }
+
+    .title {
+      @include t1;
+      margin-top: 0;
+    }
+
+    .attrs {
+      margin-top: 32px;
+
+      .attr {
+        @include tm;
+        display: flex;
+        flex-flow: row nowrap;
+
+        &:not(:last-child) {
+          margin-bottom: 4px;
+        }
+
+        .key {
+          color: $brandBlack75;
+          margin-right: 8px;
+        }
+
+        .value {
+        }
+      }
+    }
+  }
+}
+
+.contentWrapper {
+  margin-top: 92px;
+  padding-left: $hPaddingDesktop;
+  padding-right: $hPaddingDesktop;
+
+  .contentPanel {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-left: $hPaddingDesktop;
+    padding-right: $hPaddingDesktop;
+    padding-top: 90px;
+    padding-bottom: 73px;
+    background-color: $pureWhite;
+
+    .preview {
+      max-width: 1008px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .desc {
+      @include txl;
+      margin-top: 48px;
+      color: $brandBlack60;
+      width: 100%;
+      max-width: $panelMaxWidth;
+    }
+
+    .content {
+      width: 100%;
+      max-width: $panelMaxWidth;
+      margin-top: 48px;
+    }
+  }
+}

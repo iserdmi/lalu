@@ -1,1 +1,97 @@
-// I am not empty
+@use 'sass:list';
+@import '../../node_modules/include-media/dist/include-media';
+
+@mixin t1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin t2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin t3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin txl {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin tl {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin tm {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin ts {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin tmenu {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@mixin tbutton {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@mixin hoverTransition($properties) {
+  $result: ();
+  $duration: 400ms;
+  $curve: ease;
+
+  @each $property in $properties {
+    $result: list.append($result, $property $duration $curve, comma);
+  }
+
+  transition: $result;
+}
+
+@mixin sectionHPadding {
+  padding-left: $hPaddingDesktop;
+  padding-right: $hPaddingDesktop;
+
+  @include media('<=800') {
+    padding-left: $hPaddingMobile;
+    padding-right: $hPaddingMobile;
+  }
+}

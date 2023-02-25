@@ -23,75 +23,89 @@ export const Layout = ({
   return (
     <div className={cn(css.layout, className)}>
       <div className={css.header}>
-        <div className={css.logoPlace}>
-          <Logo className={css.logo} />
+        <div className={css.headerFloating}>
+          <div className={css.logoPlace}>
+            <Link className={css.logoLink} href={getHomeRoute('#header')}>
+              <Logo className={css.logo} />
+            </Link>
+          </div>
+          <ul className={css.menu}>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href={getHomeRoute('#services')}>
+                Услуги
+              </Link>
+            </li>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href={getHomeRoute('#works')}>
+                Портфолио
+              </Link>
+            </li>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href={getHomeRoute('#faq')}>
+                Частые вопросы
+              </Link>
+            </li>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href="#contacts">
+                Контакты
+              </Link>
+            </li>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href={cGeneral.contacts?.vk || '#'} target="_blank">
+                <VK />
+              </Link>
+            </li>
+            <li className={css.menuItem}>
+              <Link className={css.menuLink} href={cGeneral.contacts?.telegram || '#'} target="_blank">
+                <TG />
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul className={css.menu}>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href={getHomeRoute('#services')}>
-              Услуги
-            </Link>
-          </li>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href={getHomeRoute('#works')}>
-              Портфолио
-            </Link>
-          </li>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href={getHomeRoute('#faq')}>
-              Частые вопросы
-            </Link>
-          </li>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href="#contacts">
-              Контакты
-            </Link>
-          </li>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href={cGeneral.contacts?.vk || '#'} target="_blank">
-              <VK />
-            </Link>
-          </li>
-          <li className={css.menuItem}>
-            <Link className={css.menuLink} href={cGeneral.contacts?.telegram || '#'} target="_blank">
-              <TG />
-            </Link>
-          </li>
-        </ul>
       </div>
       <div className={css.content}>{children}</div>
-      <div className={css.contacts}>
+      <div className={css.contacts} id="contacts">
         <h2 className={css.title}>{cGeneral.contacts?.title}</h2>
         <p className={css.desc}>{cGeneral.contacts?.desc}</p>
         <div className={css.panel}>
           <ul className={css.menu}>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`tel:${cGeneral.contacts?.phone}`}>
-                <Phone className={css.icon} />
+                <span className={css.iconPlace}>
+                  <Phone className={css.icon} />
+                </span>
                 {cGeneral.contacts?.phone}
               </Link>
             </li>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`mailto:${cGeneral.contacts?.email}`}>
-                <Mail className={css.icon} />
+                <span className={css.iconPlace}>
+                  <Mail className={css.icon} />
+                </span>
                 {cGeneral.contacts?.email}
               </Link>
             </li>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`${cGeneral.contacts?.whatsapp}`}>
-                <Whatsapp className={css.icon} />
+                <span className={css.iconPlace}>
+                  <Whatsapp className={css.icon} />
+                </span>
                 Whatsapp
               </Link>
             </li>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`${cGeneral.contacts?.vk}`}>
-                <VK className={css.icon} />
+                <span className={css.iconPlace}>
+                  <VK className={css.icon} />
+                </span>
                 Группа ВК
               </Link>
             </li>
             <li className={css.menuItem}>
               <Link className={css.menuLink} href={`${cGeneral.contacts?.telegram}`}>
-                <TG className={css.icon} />
+                <span className={css.iconPlace}>
+                  <TG className={css.icon} />
+                </span>
                 Телеграм-канал
               </Link>
             </li>

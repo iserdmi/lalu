@@ -1,1 +1,192 @@
-// I am not empty
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+$headerHeightDesktop: 80px;
+$headerHeightMobile: 56px;
+
+.layout {
+  .header {
+    height: $headerHeightDesktop;
+    position: relative;
+
+    .headerFloating {
+      height: $headerHeightDesktop;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $biege;
+      padding: 0 $hPaddingDesktop;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .logoPlace {
+        .logoLink {
+          text-decoration: none;
+
+          .logo {
+          }
+        }
+      }
+
+      .menu {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        .menuItem {
+          &:not(:last-child) {
+            margin-right: 32px;
+          }
+
+          .menuLink {
+            @include tmenu;
+            @include hoverTransition(color);
+            color: $brandBlack;
+
+            path {
+              @include hoverTransition(fill-opacity fill);
+            }
+
+            &:hover {
+              color: $hoverColor;
+              transition: none;
+
+              path {
+                fill: $hoverColor;
+                fill-opacity: 1;
+                transition: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .contacts {
+    padding-top: 60px;
+    margin-top: 60px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    @include sectionHPadding;
+
+    .title {
+      @include t1;
+      text-align: center;
+    }
+
+    .desc {
+      @include tm;
+      color: $brandBlack60;
+      margin-top: 16px;
+      max-width: $descMaxWidth;
+      text-align: center;
+    }
+
+    .panel {
+      margin-top: 32px;
+      padding: 80px 0;
+      background: $pureWhite;
+      max-width: $panelMaxWidth;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      .menu {
+        .menuItem {
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          .menuLink {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            @include tl;
+            color: $brandBlack;
+            @include hoverTransition(color);
+
+            .iconPlace {
+              width: 30px;
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 14px;
+
+              path {
+                @include hoverTransition(fill fill-opacity);
+              }
+            }
+
+            &:hover {
+              color: $hoverColor;
+              transition: none;
+
+              .iconPlace {
+                path {
+                  fill: $hoverColor;
+                  fill-opacity: 1;
+                  transition: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 160px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    .menu {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+
+      .menuItem {
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+
+        .menuLink {
+          @include tmenu;
+          @include hoverTransition(color);
+          color: $brandBlack;
+
+          &:hover {
+            color: $hoverColor;
+            transition: none;
+          }
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 32px;
+      @include ts;
+    }
+
+    .leaf {
+      display: block;
+      margin-top: 48px;
+    }
+  }
+}

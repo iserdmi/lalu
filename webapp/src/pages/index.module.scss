@@ -1,1 +1,306 @@
-// I am not empty
+@import '../styles/vars';
+@import '../styles/mixins';
+
+.gallery {
+  width: 100%;
+  height: 611px;
+  background: $brandGreen;
+
+  * {
+    display: none;
+  }
+}
+
+.promo {
+  margin-top: 120px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  @include sectionHPadding;
+
+  .panel {
+    width: 100%;
+    max-width: $panelMaxWidth;
+    position: relative;
+    padding: 40px 48px;
+    background: $pureWhite;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    * {
+      z-index: 2;
+    }
+
+    .branch {
+      position: absolute;
+      top: -32px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .avatar {
+      flex: 0 0 40px;
+      margin-right: 40px;
+      width: 144px;
+      height: 144px;
+    }
+
+    .text {
+      flex: 1 1 100%;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+
+      .title {
+        @include t2;
+      }
+
+      .desc {
+        margin-top: 8px;
+        @include tl;
+        color: $brandBlack75;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+.services {
+  margin-top: 60px;
+  padding-top: 60px;
+  @include sectionHPadding;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .wrapper {
+    max-width: $panelMaxWidth;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .title {
+      @include t1;
+      text-align: center;
+    }
+
+    .desc {
+      @include tm;
+      color: $brandBlack75;
+      margin-top: 16px;
+      max-width: $descMaxWidth;
+      text-align: center;
+
+      a {
+        color: $brandGreen;
+        @include hoverTransition(color);
+        text-decoration: underline;
+
+        &:hover {
+          color: $brandBlack;
+          transition: none;
+        }
+      }
+    }
+
+    .items {
+      margin-top: 32px;
+    }
+  }
+}
+
+.collapasableItems {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .item {
+    background-color: $pureWhite;
+    padding: 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0);
+    transition: box-shadow 400ms ease;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &.opened {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+
+      .itemContent {
+        opacity: 1;
+        max-height: 600px;
+        margin-top: 16px;
+      }
+
+      .itemArrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    .itemHeader {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      position: relative;
+
+      .itemIcon {
+        flex: 0 0 56px;
+        margin-right: 24px;
+      }
+
+      .itemText {
+        flex: 1 1 100%;
+
+        .itemTitle {
+          @include txl;
+          position: relative;
+          padding-right: 30px;
+
+          .itemArrow {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            transition: transform 400ms ease;
+          }
+        }
+
+        .itemDesc {
+          margin-top: 4px;
+          @include tm;
+          color: $brandBlack60;
+        }
+      }
+    }
+
+    .itemContent {
+      transition: opacity 400ms ease, margin-top 400ms ease;
+      opacity: 0;
+      max-height: 0;
+      margin-top: 0;
+      // padding-bottom: 32px;
+      overflow: hidden;
+      @include tm;
+
+      &.padded {
+        padding-left: 80px;
+      }
+    }
+  }
+}
+
+.works {
+  padding-top: 60px;
+  margin-top: 60px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  @include sectionHPadding;
+
+  .title {
+    @include t1;
+    text-align: center;
+  }
+
+  .desc {
+    @include tm;
+    color: $brandBlack75;
+    margin-top: 16px;
+    max-width: $descMaxWidth;
+    text-align: center;
+  }
+
+  .items {
+    margin: 32px -16px -32px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 1216px;
+
+    .item {
+      flex: 0 0 33.3333%;
+      padding: 0 16px 32px;
+      position: relative;
+
+      &:hover {
+        .itemInner .content .itemTitle {
+          color: $brandGreen;
+          transition: none;
+        }
+      }
+
+      .itemInner {
+        position: relative;
+        width: 100%;
+        background: $pureWhite;
+        display: block;
+
+        .image {
+          display: block;
+          height: 200px;
+          width: 100%;
+          object-fit: fill;
+        }
+
+        .content {
+          padding: 16px 20px 22px;
+
+          .itemTitle {
+            @include tl;
+            margin-bottom: 2px;
+            color: $brandBlack;
+            @include hoverTransition(color);
+          }
+
+          .subtitle {
+            @include tm;
+            color: $brandBlack60;
+            margin-bottom: 58px;
+          }
+
+          .date {
+            @include tm;
+            color: $brandBlack60;
+          }
+        }
+      }
+    }
+  }
+}
+
+.faq {
+  margin-top: 60px;
+  padding-top: 60px;
+  @include sectionHPadding;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .wrapper {
+    max-width: $panelMaxWidth;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .title {
+      @include t1;
+      text-align: center;
+    }
+
+    .desc {
+      @include tm;
+      color: $brandBlack75;
+      margin-top: 16px;
+      max-width: $descMaxWidth;
+      text-align: center;
+    }
+
+    .items {
+      margin-top: 32px;
+    }
+  }
+}
