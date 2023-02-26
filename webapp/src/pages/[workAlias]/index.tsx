@@ -63,6 +63,12 @@ const WorkPage = ({ cWork, cGeneral, contentHtml }: GetStaticPropsType<typeof ge
           <RichText className={css.content} html={contentHtml} />
         </div>
       </div>
+      <div className={css.bottomBackWrapper}>
+        <Link className={css.back} href={getHomeRoute('#works')}>
+          <BackArrow className={css.icon} />
+          <span>{cGeneral.work?.back}</span>
+        </Link>
+      </div>
     </>
   )
 }

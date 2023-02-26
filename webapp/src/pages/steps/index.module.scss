@@ -15,6 +15,10 @@
     .title {
       @include t1;
       margin-bottom: 8px;
+
+      @include breakpoint1 {
+        @include t2;
+      }
     }
 
     .desc {
@@ -41,6 +45,11 @@
   padding-left: $hPaddingDesktop;
   padding-right: $hPaddingDesktop;
 
+  @include breakpoint1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .contentPanel {
     display: flex;
     flex-flow: column;
@@ -50,6 +59,18 @@
     padding-top: 90px;
     padding-bottom: 73px;
     background-color: $pureWhite;
+
+    @include media('<=1190px') {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include breakpoint1 {
+      padding-left: $hPaddingMobile;
+      padding-right: $hPaddingMobile;
+      padding-top: $hPaddingMobile;
+      padding-bottom: $hPaddingMobile;
+    }
 
     .content {
       width: 100%;

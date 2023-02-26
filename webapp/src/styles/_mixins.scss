@@ -86,12 +86,66 @@
   transition: $result;
 }
 
+@mixin breakpoint1 {
+  @include media($breakpoint1) {
+    @content;
+  }
+}
+
 @mixin sectionHPadding {
   padding-left: $hPaddingDesktop;
   padding-right: $hPaddingDesktop;
 
-  @include media('<=800') {
+  @include breakpoint1 {
     padding-left: $hPaddingMobile;
     padding-right: $hPaddingMobile;
+  }
+}
+
+@mixin sectionTPadding {
+  padding-top: 80px;
+  margin-top: 40px;
+
+  @include breakpoint1 {
+    padding-top: 60px;
+    margin-top: 20px;
+  }
+}
+
+@mixin sectionHeader {
+  .title {
+    @include t1;
+    text-align: center;
+  }
+
+  .desc {
+    @include tm;
+    color: $brandBlack75;
+    margin-top: 16px;
+    max-width: $descMaxWidth;
+    text-align: center;
+    margin-bottom: 32px;
+
+    a {
+      color: $brandGreen;
+      @include hoverTransition(color);
+      text-decoration: underline;
+
+      &:hover {
+        color: $brandBlack;
+        transition: none;
+      }
+    }
+  }
+
+  @include breakpoint1 {
+    .title {
+      @include t2;
+    }
+
+    .desc {
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
   }
 }

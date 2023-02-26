@@ -8,5 +8,7 @@ $pureWhite: #fff;
 $brandBlack60: rgba(57 58 61 / 60%);
 $brandBlack75: rgba(57 58 61 / 75%);
 $hoverColor: $brandGreen;
+$hoverLightColor: rgba($pureWhite, 0.6);
 $panelMaxWidth: 800px;
 $descMaxWidth: 600px;
+$breakpoint1: '<=920px';

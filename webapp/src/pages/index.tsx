@@ -5,11 +5,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 import css from './index.module.scss'
 import ArrowDownUp from '@/assets/images/arrow-down-up.svg'
+import BranchSmall from '@/assets/images/branch-small.svg'
 import Branch from '@/assets/images/branch.svg'
 import Service1 from '@/assets/images/services/1.svg'
 import Service2 from '@/assets/images/services/2.svg'
 import Service3 from '@/assets/images/services/3.svg'
 import Service4 from '@/assets/images/services/4.svg'
+import { Gallery } from '@/components/Gallery'
 import { type GetStaticPropsType } from '@/utils/GetStaticPropsType'
 import { withDefaultStaticProps } from '@/utils/defaultGetStaticProps'
 import { getImageUrl } from '@/utils/image'
@@ -42,15 +44,16 @@ const HomePage = ({ cMain }: GetStaticPropsType<typeof getStaticProps>) => {
         <title>{cMain.promo?.title}</title>
       </Head>
 
-      <div className={css.gallery}>
-        {cMain.gallery?.map((item) => (
-          <img key={item._key} alt="" src={getImageUrl(item)} />
-        ))}
+      <div className={css.galleryWrapper}>
+        <div className={css.gallery}>
+          <Gallery input={cMain.gallery} />
+        </div>
       </div>
 
       <div className={css.promo}>
         <div className={css.panel}>
           <Branch className={css.branch} />
+          <BranchSmall className={css.branchSmall} />
           <img className={css.avatar} alt="" src={getImageUrl(cMain.promo?.image)} />
           <div className={css.text}>
             <h1 className={css.title}>{cMain.promo?.title}</h1>
